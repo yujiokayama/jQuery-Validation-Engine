@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/jquery.validationEngine-ja.js"></script>
+    <script>
+      $(function() {
+        $('#form_1, #form_2').validationEngine();
+      });
+    </script>
+    <link rel="stylesheet" href="css/validationEngine.jquery.css" />
+  </head>
+  <body>
+    <section>
+      <form id="form_1">
+        <h1>必須</h1>
+        <input type="text" name="" class="validate[required]" />
+      </form>
+    </section>
+    <section>
+      <form id="form_2">
+        <h1>カスタム</h1>
+        <input type="text" name="" class="validate[custom[custom1]" />
+        <h1>ラジオボタンのvalueチェック</h1>
+        <input type="radio" name="radio" value="1"　class="validate[custom[radioCheck]">
+        <input type="radio" name="radio" value="2"　class="validate[custom[radioCheck]">
+      </form>
+    </section>
+  </body>
 </html>
